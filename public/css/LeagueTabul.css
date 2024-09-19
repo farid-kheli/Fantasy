@@ -1,0 +1,47 @@
+body{
+    background: url('https://lh3.googleusercontent.com/meML5Tk61k_HB0SVLFAIfoE4DbrRCk7VjMbTwSvURJlTSCDZFVYR55F9_gHbfYoz_yBbhzLDXdFqow=w1440-ns-nd-rj') no-repeat;
+    background-size: cover; /* Ensures padding doesn't affect total width */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7fd;
+    margin: 0;
+    padding: 0;
+}
+
+.league-table {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff3d;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #333;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #ffffff59;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,136 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: url('https://t3.ftcdn.net/jpg/06/75/03/76/360_F_675037634_8r0fVIRrRo4OxSFjttMRGF8fyWLsPGTI.jpg') no-repeat;
+    background-size: cover;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two blocks per row */
+    gap: 50px;
+    padding: 50px;
+}
+
+.block {
+    background: #00000021;
+    padding: 20px; /* Add padding to the blocks */
+    box-sizing: border-box; /* Ensure padding is included in the block's dimensions */
+    min-height: 200px; /* Set a minimum height for the blocks */
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    transition: .5s;
+    color: black; 
+    box-shadow: 0px 0px 10px black;
+}
+
+.block:hover {
+    cursor: pointer;
+    background: #00000096;
+    color: white;
+}
+header {
+    background-color: #b2c4ff; /* Header background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Header box shadow */
+    padding: 20px 0; /* Header padding */
+}
+
+.header-container {
+    max-width: 1200px; /* Maximum width of header content */
+    margin: 0 auto; /* Center header content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Horizontal padding */
+}
+
+h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Header title font size */
+    color: #000000; /* Header title color */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px; 
+    /* Spacing between navigation items */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from last navigation item */
+}
+
+nav ul li a {
+    
+    text-decoration: none; /* Remove default underline */
+    color: #000000; /* Navigation link color */
+    transition: color 0.3s;
+    transition: .3s; /* Smooth transition on color change */
+}
+
+nav ul li a:hover , .active{
+    border-bottom: 3px solid rgb(0, 0, 0); /* Hover color for navigation links */
+}
+.singin{
+    padding: 10px;
+    border-radius: 50px;
+    border-bottom: 0px solid black;
+    border: 2px solid black;
+
+}
+.singin:hover{
+    background: black;
+    color: white;
+}
+.login{
+    border-bottom: 0px solid black;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+.login:hover{
+    border-bottom: 0px solid black;
+    background: black;
+    color: #ffffff;
+}
+
+/* Media query for smaller screens (phones) */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 25px; 
+        gap: 10px;/* Change to single column layout */
+    }
+    /* Change background image for phones */
+    body, html {
+        margin: 0;
+
+        height: 100%;
+        width: 100%;
+        background: url('https://t3.ftcdn.net/jpg/06/75/03/76/360_F_675037634_8r0fVIRrRo4OxSFjttMRGF8fyWLsPGTI.jpg') no-repeat;
+        background-size:cover;
+        box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    }
+ 
+}
+
+/* Media query for tablet-sized screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr); /* Change to single column layout */
+    }
+    /* Change background image for tablets */
+
+}
