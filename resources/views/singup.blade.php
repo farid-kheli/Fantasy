@@ -39,8 +39,8 @@
                             {{ session('wrong') }}
                         </div>
                 @endif
-                <input type="email" placeholder="Email" class="input" value="{{old('email')}}" />
-                <input type="password" placeholder="Password" class="input" value="{{old('password')}}" />
+                <input type="email" name="email"  placeholder="Email" class="input" value="{{old('email')}}" />
+                <input type="password" name="password"   placeholder="Password" class="input" value="{{old('password')}}" />
                 <a href="#" class="link">Forgot your password?</a>
                 <button type="submit" class="btn">Sign In</button>
             </form>
