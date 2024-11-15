@@ -4,7 +4,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <body style="background: #00152b; ">
-        <form action="{{route('Create.club')}}" method="post" enctype="multipart/form-data">
+        <form class=".form" action="{{route('Create.club')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="d-flex justify-content-center">
                 <div class="d-flex flex-column gap-4 bg-dark p-5 rounded text-white" style="width: 800px">

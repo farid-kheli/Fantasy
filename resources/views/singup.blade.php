@@ -20,7 +20,7 @@
                 <h2 class="form__title">Sign Up</h2>
                 
                 <input name="UserName" type="text" placeholder="User Name" class="input" />
-                <input name="emai" type="email" placeholder="Email" class="input" />
+                <input name="email" type="email" placeholder="Email" class="input" />
                 <input name="password" type="password" placeholder="Password" class="input" />
                 <input name="password2" type="password" placeholder="Re entre Password" class="input" />
                 <button type="submit" class="btn">Sign Up</button>

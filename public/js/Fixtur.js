@@ -9,9 +9,8 @@ function random(){
     const shuffledArray = list.sort((a, b) => 0.5 - Math.random());
     clubsList = document.querySelector('.round')
    round = clubsList.querySelectorAll('[class=stage]')
-   for(let i=0;i<round.length;i++ ){
-    round[i].innerHTML = shuffledArray[i].innerHTML
+   console.log(shuffledArray[1].id)
+   for(let i=0;i<shuffledArray.length;i++ ){
+    round[i].innerHTML = shuffledArray[i].innerHTML + `<input type="hidden" name="team${i}" id="team1Input" value="${shuffledArray[i].id}">`
    }
-   console.log(shuffledArray[3])
-   document.getElementById('save').href="/Admin/Save/Fixture"
 }

@@ -1,4 +1,19 @@
 total=0
+calculate(document.getElementById('MinutePlayed1'),'MinutePlayed')
+calculate(document.getElementById('Goals1'),'Goals')
+calculate(document.getElementById('GoalAssists1'),'GoalAssists')
+calculate(document.getElementById('BigChanceCreated1'),'BigChanceCreated')
+calculate(document.getElementById('BallsIntoTheBox1'),'BallsIntoTheBox')
+calculate(document.getElementById('PinaltiesSaved1'),'PinaltiesSaved')
+calculate(document.getElementById('Saves1'),'Saves')
+calculate(document.getElementById('EffectiveClearances1'),'EffectiveClearances')
+calculate(document.getElementById('PenaltiesMissed1'),'PenaltiesMissed')
+calculate(document.getElementById('OwnGoals1'),'OwnGoals')
+calculate(document.getElementById('YellowCard1'),'YellowCard')
+calculate(document.getElementById('RedCard1'),'RedCard')
+calculate(document.getElementById('EffectiveDribbles1'),'EffectiveDribbles')
+calculate(document.getElementById('Recoveries1'),'Recoveries')
+calculate(document.getElementById('LostBalls1'),'LostBalls')
 function calculate(elemnt,id){
     number = elemnt.value
     switch(id) {
@@ -74,4 +89,6 @@ function TOTAL(){
     total = total + Number(document.getElementById('AddisionallPoints').value)
     console.log(document.getElementById('AddisionallPoints').value)
     document.getElementById('TOTAL').innerHTML = total
+    document.getElementById('TOTALPOINTS').value = total
+    
 }

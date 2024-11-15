@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Club;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,16 +15,13 @@ return new class extends Migration
     {
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
-            $table->string('Home');
-            $table->string('Away');
+            $table->integer('Home');
+            $table->integer('Away');
+            $table->integer('FixturN');
             $table->dateTime('Time')->nullable();
             $table->dateTime('EndTime')->nullable();
-            $table->integer('firstHome')->Nullable();
-            $table->integer('firstAway')->Nullable();
-            $table->integer('secendHome')->Nullable();
-            $table->integer('secendAway')->Nullable();
-            $table->integer('thirdeHome')->Nullable();
-            $table->integer('thirdeAway')->Nullable();
+            $table->integer('GoalHome')->Nullable();
+            $table->integer('GoalAway')->Nullable();
             $table->timestamps();
         });
     }
@@ -31,5 +29,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+    function getCub($id){
+        return Club::where('id',$id)->first();
+    }
     
 };

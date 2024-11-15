@@ -495,13 +495,15 @@ table tr:hover {
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 
-form {
+.form{
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
@@ -594,13 +596,13 @@ label + input[type=radio] + label {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 30px;
 }
 .stage img{
   height: 50px;
 }
 .Fixture{
-  padding: 50px;
+  padding: 20px;
   display: flex;
   gap: 50px;
 }
@@ -609,13 +611,9 @@ label + input[type=radio] + label {
   flex-direction: column;
   gap: 20px;
 }
-.radone{
-  display: flex;
-  justify-content: space-between;
-}
 .controller{
   padding: 40px;
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 20px;
 }
 .c{
@@ -624,9 +622,14 @@ label + input[type=radio] + label {
   color: white;
   border-bottom:1px solid rgb(91, 93, 119);
 }
+form{
+  display: flex;
+  justify-content: space-between;
+}
 .c img{
   height: 50px;
 }
+
 .Fixture-controler{
   padding: 20px;
   background: rgb(2, 8, 77);
@@ -637,7 +640,7 @@ label + input[type=radio] + label {
  
   height: 700px;
 }
-.controller button{
+.controller button,.controller a{
   padding: 5px;
   border:0 solid black ;
   background: rgb(47, 122, 32);
@@ -655,7 +658,10 @@ label + input[type=radio] + label {
   overflow: scroll;
 }
 
-
+.stage a{
+  background: #ffffff00;
+  font-size: large;
+}
 
 ::-webkit-scrollbar {
   width: 20px;
@@ -674,4 +680,97 @@ background-clip: content-box;
 
 ::-webkit-scrollbar-thumb:hover {
 background-color: #a8bbbf;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+.panel{
+  background: rgb(86, 193, 255);
+  padding: 20px;
+  height: 700px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.panel img{
+  height: 90px;
+
+}
+.one{
+  display: flex;
+  justify-content: space-between;
+
+}
+.game{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: #194391;
+  width: 400px;
+  border-radius: 10px;
+}
+.strat, .end,.notlive .team a{
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 7px;
+  background: #00000000;
+}
+.live .end{
+  border:2px solid #cf001c;
+}
+.notlive .end,.notlive .team a{
+  border:2px solid #252525;
+  color: #252525;
+}
+.strat{
+  border:2px solid #0039d6;
+  text-decoration: none;
+}
+.strat:hover{
+  background: #0039d6;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px #0039d6;
+}
+.live .end:hover{
+  background: #cf001c;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px #cf001c;
+}
+.scoor{
+  display: flex;
+  color: white;
+  gap: 5px;
+}
+.too{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.gap{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.team{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: white;
+}
+.live .team a{
+  border:2px solid #199c4b;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 7px;
+  background: #00000000;
+}
+.live .team a:hover{
+  background: #199c4b;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px #199c4b;
 }

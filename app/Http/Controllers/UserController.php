@@ -12,13 +12,13 @@ class UserController extends Controller
 
     public function NewUser(){
         request()->validate([
-            'UserName'=> ['required','unique:User,UserName'],
-            'email'=> ['required','email','unique:User,email'],
+            'UserName'=> ['required','unique:users,name'],
+            'email'=> ['required','email','unique:users,email'],
             'password'=>'required',
         ]);
         User::create([
-            'UserName'=>request()->UserName,
-            'email'=>request()->emai,
+            'name'=>request()->UserName,
+            'email'=>request()->email,
             'password'=>hash::make(request()->password),
         ]);
         return to_route('Singup');

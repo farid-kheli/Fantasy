@@ -10,7 +10,7 @@
                         </div>
                     @endif
         <div class="d-flex justify-content-center" >
-            <form method="POST" action="{{route('Create.Player')}}" class="d-flex flex-column gap-4 bg-dark p-5 rounded text-white"  enctype="multipart/form-data">
+            <form class="rounded d-flex bg-dark text-white p-4 justify-content-center flex-column" method="POST" action="{{route('Create.Player')}}" class="d-flex flex-column gap-4 bg-dark p-5 rounded text-white"  enctype="multipart/form-data">
                 @csrf
                 <h4>player Name</h4>
                 <div class="row">

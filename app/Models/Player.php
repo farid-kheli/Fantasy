@@ -14,6 +14,16 @@ class Player extends Model
         'Club',
         'Position',
         'Pictur',
+        'Points',
+        'Avrege',
+        'Gols',
+        'assiste',
     ];
-
+    
+    public function getTeam($name){
+        return Club::where('ClubName',$name)->first();
+    }
+    public function getplayer($id){
+        return Player::where('id',$id)->first();
+    }
 }

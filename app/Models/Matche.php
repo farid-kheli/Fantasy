@@ -12,15 +12,14 @@ class Matche extends Model
         'Home',
         'Away',
         'Time',
+        'FixturN',
         'EndTime',
-        'firstHome',
-        'firstAway',
-        'secendHome',
-        'secendAway',
-        'thirdeHome',
-        'thirdeAway',
+        'GoalHome',
+        'GoalAway',
+
     ];
-    public function getTeam($name){
-        return Club::where('ClubName',$name)->first();
+    function getClub($id){
+        return Club::where('id',$id)->first();
     }
+    
 }

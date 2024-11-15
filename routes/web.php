@@ -18,6 +18,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('/OldHome', function () {
+    return view('OldHomme');
+})->name('home2');
 Route::get('/', function () {
     return view('Homme');
 })->name('home');
@@ -28,7 +31,8 @@ Route::get('/League/Tabule',[ ViewController::class,'LeagueTabul'])->name('Leagu
 Route::get('/Matchs',[ ViewController::class,'MAtchesPage'])->name('Match.Page');
 Route::get('/Matchs/Players/{by}',[ ViewController::class,'Player'])->name('Players.Page');
 Route::get('/Matchs/Plane/Week/{number}',[ ViewController::class,'PlanWeek'])->name('League.Plan');
-Route::get('/Fantasie/Team/{ID}',[ ViewController::class,'FantasieClub'])->name('Fantasie.Club');
+Route::get('/Fantasie/Team/{ID}/{Fixur}',[ ViewController::class,'FantasieClub'])->name('Fantasie.Club');
+Route::get('/Fantasie/Points/{ID}/{Fixur}',[ ViewController::class,'FantasiePoints'])->name('Fantasie.Club.Points');
 Route::get('/Admin/Matches',[ AdminController::class,'AdminMatches'])->name('Admin.Matches');
 Route::get('/Admin/Clubs',[ AdminController::class,'AdminClubs'])->name('Admin.Clubs');
 Route::get('/Admin/Creat/Player',[ AdminController::class,'AdminCreatePlayer'])->name('Admin.Create.Player');
@@ -36,12 +40,21 @@ Route::post('/Admin/Creat/club',[AdminController::class,'Createclub'])->name('Cr
 Route::post('/Admin/Creat/Player',[ AdminController::class,'CreatePlayer'])->name('Create.Player');
 Route::post('/Admin/Creat/Match',[ AdminController::class,'CreateMatch'])->name('Create.Match');
 Route::post('/Admin/Update/{Match}',[ MatchController::class,'UpdateMatch'])->name('Update.Match');
-Route::post('/Admin/Update/{Match}/{Info}',[ MatchController::class,'UpdatInfo'])->name('Update.Match.Info');
+Route::post('/Admin/Update/{Club}/{Fixtur}',[ MatchController::class,'UpdatInfo'])->name('Update.Match.Info');
 Route::get('/Admin/Creat/club',[ AdminController::class,'AdminCreateClub'])->name('Admin.Create.Club');
-Route::get('/Admin/Game/detail/{MatcheID}',[ AdminController::class,'GameCarde'])->name('Game.Carde');
+Route::get('/Admin/Game/detail/{Team}/{FixturN}',[ AdminController::class,'GameCarde'])->name('Game.Carde');
 Route::get('/Admin/Clubs/{club}',[ AdminController::class,'AdminClubsManage'])->name('Admin.Clubs.Manage');
 Route::get('/Admin/add/{player}/to/{club}',[ AdminController::class,'addplayertoclub'])->name('Admin.add.playyer');
-Route::get('/Admin/Player/Profiel/{Player}',[ PlayerController::class,'AdminPlayerProfiel'])->name('Player.Profiel.Admin');
+Route::get('/Admin/Player/Profiel/{Player}/{Fixtur}',[ PlayerController::class,'AdminPlayerProfiel'])->name('Player.Profiel.Admin');
 Route::get('/Admin/Fixture/',[ AdminController::class,'Fixtur'])->name('Fixtur.Admin');
-Route::get('/Admin/Save/Fixture',[ AdminController::class,'SaveFixturInfo'])->name('Save.Fixtur.Info');
-Route::get('/Player/Profiel/{Player}',[ PlayerController::class,'PlayerProfiel'])->name('Player.Profiel');
+Route::post('/Admin/Save/Fixture',[ AdminController::class,'SaveFixturInfo'])->name('Save.Fixtur.Info');
+Route::post('/Update/{Player}/Points/{Fixtur}',[ PlayerController::class,'UpdatePlayerPoint'])->name('Update.Player.Fixur');
+Route::get('/Player/Profiel/{User}/{Player}/{Fixtur}',[ PlayerController::class,'PlayerProfiel'])->name('Player.Profiel');
+Route::get('/Player/Profiel/Owned/{User}/{Player}/{Fixtur}',[ PlayerController::class,'OwnedPlayerProfiel'])->name('Player.Profiel.Owned');
+Route::get('/{User}/by/{Player}/{Fixutur}',[ PlayerController::class,'Bying'])->name('User.By');
+Route::post('/Fantasie/Team/{User}/{FixturN}',[ PlayerController::class,'SaveFantasieXI'])->name('Fantasie.XI');
+Route::get('/{User}/sele/{Player}/{Fantasie}',[ PlayerController::class,'seling'])->name('User.sele');
+Route::get('/Start/Game/{id}',[ MatchController::class,'StartGame'])->name('start.Game');
+Route::get('/Start/Fixtur/{number}',[ AdminController::class,'StartFixtur'])->name('Start.Fixtur');
+Route::get('/scoor/Game/{who}/{id}',[ MatchController::class,'ScoorGame'])->name('Scoor.Game');
+Route::get('/End/Game/{id}',[ MatchController::class,'EndGame'])->name('End.Game');

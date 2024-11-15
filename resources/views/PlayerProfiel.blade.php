@@ -1,6 +1,6 @@
 @extends('playerprofiel.PlayerProfiel')
 @section('Action')
-<button type="button" class="btn btn-outline-danger">Hier</button>
+<a href="{{route('User.By',[$User,$Player->id,1])}}" type="button" class="btn btn-outline-danger">Hier</a>
 @endsection('Action')
 @section('Tabel')
 <tbody>

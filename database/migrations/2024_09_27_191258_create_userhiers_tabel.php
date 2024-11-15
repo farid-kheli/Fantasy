@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users_taabel', function (Blueprint $table) {
+        Schema::create('userhiers', function (Blueprint $table) {
             $table->id();
+            $table->integer('User');
+            $table->integer('Player');
             $table->timestamps();
         });
     }
@@ -20,8 +22,5 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('users_taabel');
-    }
+  
 };

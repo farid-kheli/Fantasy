@@ -11,7 +11,7 @@ class Playepoint extends Model
     protected $fillable = [
         'PlayerID',
         'FixtureN',
-        'MinutePlayed',
+        'MatchePlayed',
         'Goals',
         'GoalAssists',
         'BigChanceCreated',

@@ -8,7 +8,7 @@ header {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 5px 0;
 }
 
 .container {
@@ -61,7 +61,20 @@ footer {
   z-index: 1;
   position: relative;
 }
+.card2 {
+  width: 180px;
+  height: 250px;
+  background: #202020;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: end;
+}
+.empty img{
+  height: 180px;
 
+}
 .try {
   background: linear-gradient(to bottom right, #008000 50%, #202020 50%);
   height: 40%;
@@ -104,9 +117,10 @@ footer {
   color: white;
 
 }
-
 .team-nave ul li {
-  list-style: none;
+list-style: none;}
+.team-nave ul li a{
+
   height: 30px;
   width: 30px;
   background: #333;
@@ -117,6 +131,7 @@ footer {
   border-radius: 50%;
   cursor: pointer;
   transition: .5s;
+  
 }
 
 .dedline {
@@ -127,17 +142,65 @@ footer {
 
 .team-nave {
   background: #303030;
-  padding: 20px;
+  padding: 30px;
 }
 
+header nav{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 10px;
+}
+.MainNav{
+  display: flex;
+  justify-content: center;
+  background: #780030;
+  padding: 50px;
+  width: 1000px;
+  box-shadow: 0 0 10px black;
+  border-radius: 113px;
+}
+title{
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+}
+header ul{
+  display: flex;
+  justify-content: end;
+  position: relative;
+  bottom: 70px;
+  right: 500px;
+  gap: 20px;
+}
+header li{
+  background: #780030;
+  height: 50px;
+  padding: 30px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: .5s;
+}
+header li:hover, .active{
+  height: 100px;
+}
+header li img{
+  width: 40px;
+}
 .team {
   width: 100%;
   height: 70%;
   padding: 50px;
 }
 
-.team-list ul li:hover {
+.team-list ul li a:hover {
   background: #555555;
+  color: white;
 }
 
 .player {
@@ -158,7 +221,40 @@ footer {
   gap: 10px;
   justify-content: center;
 }
+.team-nave button{
+  padding: 10px;
+  background: #00000000;
+  border:2px solid #be004f;
+  color: #be004f;
+  cursor: pointer;
+  transition: .5s;
+  border-radius: 5px;
+}
+.team-nave button:hover{
+  background: #be004f;
+  color: white
+}
 
+.butns{
+  display: flex;
+}
+.butns a{
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+color: white;
+transition: .9s;
+  font-weight: 400;
+  cursor: pointer;
+}
+.butns a:hover{
+  background: #ffffff25;
+}
+.bactiv{
+  border-bottom:3px solid #ff002b;
+}
 /* Please ❤ this if you like it! */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
@@ -394,7 +490,7 @@ footer {
   border-bottom: 8px solid #fff;
 }
 
-a {
+.sec-center a {
   position: relative;
   color: #fff;
   transition: all 200ms linear;
@@ -421,8 +517,8 @@ a {
 .dark-light:checked~.sec-center .section-dropdown a {
   color: #102770;
 }
-
-a:hover {
+ 
+.sec-center a:hover {
   color: #102770;
   background-color: #ffeba7;
 }
@@ -564,7 +660,65 @@ a .uil {
 .dark-light:checked~.logo img {
   filter: brightness(10%);
 }
+.Void{
+  width: 180px;
+  height: 250px;
+  background: #202020;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  color: rgb(75, 75, 75);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.Void:hover{
+  color: white;
+  font-size: xx-large;
+}
+.change{
+  padding: 30px;
+  border-radius: 18px;
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.titel{
+  display: flex;
+  justify-content: space-between;
+  color: white
+}
+.titel button{
+  padding: 5px;
+  background: #00000000;
+  border: 0 solid black;
+  cursor: pointer;
+  transition: .5s;
+  color: white
+}
 
+.titel button:hover{
+  background: #494949;
+}
+.cp{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px;
+  background: #161616;
+}
+.sperator{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sperator img{
+  width: 50px;
+}
 @media screen and (max-width: 991px) {
   .logo {
     top: 30px;

@@ -1,79 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/LeagueTabul.css') }}">
-
-    <title>League Tabul</title>
-</head>
-<body>
-    <div class="league-table">
-            <h2>League Table</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Position</th>
-                        <th>Team</th>
-                        <th>Played</th>
-                        <th>Won</th>
-                        <th>Drawn</th>
-                        <th>Lost</th>
-                        <th>Points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Team A</td>
-                        <td>10</td>
-                        <td>8</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Team B</td>
-                        <td>10</td>
-                        <td>6</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Team B</td>
-                        <td>10</td>
-                        <td>6</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Team B</td>
-                        <td>10</td>
-                        <td>6</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Team B</td>
-                        <td>10</td>
-                        <td>6</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>20</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-        </table>
-    </div>
-
-    
-</body>
-</html>
+@extends('Main.Main')
+@section('Nav')
+<a href="{{route('home')}}"><li ><img
+        src="https://www.freeiconspng.com/thumbs/house-png/home-house-silhouette-icon-building--public-domain-pictures--20.png"
+        alt=""></li></a>
+<a href="{{route('League.Tabul')}}">
+    <li class="active"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/league-table-4294018-3561200.png?f=webp" alt="">
+    </li>
+</a>
+<a href="{{route('Match.Page')}}"><li><img src="https://cdn-icons-png.flaticon.com/512/53/53254.png" alt=""></li></a>
+<li><img src="https://www.pngall.com/wp-content/uploads/5/Vector-Game-Controller.png" alt=""></li>
+<li><img src="https://static.thenounproject.com/png/716657-200.png" alt=""></li>
+@endsection('Nav')
+@section('Main')
+<div class="MT">
+<table>
+    <thead>
+        <tr>
+        <th>#</th>
+        <th>bage</th>
+        <th>Name</th>
+        <th>Win</th>
+        <th>Draw</th>
+        <th>Lost</th>
+        <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($Clubs as $Club)
+            <tr>
+                <th>1</th>
+                <th><img src="{{$Club->FilePathe}}" alt=""></th>
+                <th>{{$Club->ClubName}}</th>
+                <th>10</th>
+                <th>5</th>
+                <th>3</th>
+                <th>50</th>
+            </tr> 
+        @endforeach
+           
+        
+    </tbody>
+</table>
+</div>
+@endsection('Main')

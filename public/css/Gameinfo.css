@@ -11,9 +11,14 @@ main{
 .matche-carde{
     padding: 20px;
     background: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 850px;
+    overflow: scroll;
 }
 .club{
-    color: white;
+    color: #000000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,17 +28,18 @@ main{
     display: flex;
     gap: 35px;
     padding: 50px;
+    background: whitesmoke;
+    border-radius: 18px;
+    color: black;
 }
 .score{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #000000;
     gap: 20px;
 }
-.scend{
-    padding-right: 25px ;
-}
+
 .players-scoore{
     display: flex;
     justify-content: center;
@@ -47,14 +53,7 @@ main{
     display: flex;
     gap: 10px;
 }
-.scend li{
-    color:#d3d3d3;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #d3d3d3;
-}
+
 .pitche{
     width: 800px;
     height: 100%;
@@ -92,9 +91,7 @@ main{
 }
 .home-team .player{
     background: #801515;
-}
-.away-team .player{
-    background: #152980;
+    cursor: pointer;
 }
 .pitche .player-card{
     display: flex;
@@ -104,11 +101,11 @@ main{
     color: white;
     gap: 5px;
 }
-.pitche .away-team,.pitche .home-team{
+.pitche .home-team{
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 20px;
+    gap: 120px;
+    padding-bottom: 150px;
 }
 .Line{
     display: flex;
@@ -121,7 +118,7 @@ main{
     display: none;
 }
 
-.void{
+.void,.playerP{
   width: 20px;
   height: 20px;
   padding: 10px;
@@ -132,7 +129,9 @@ main{
   border: 2px solid #ffffff;
   color: white;
   transition: .5s;
+
 }
+
 .unslected{
   width: 20px;
   height: 20px;
@@ -147,11 +146,10 @@ main{
   background: gray;
   border: 2px solid gray;
 }
-.void:hover{
+.void,.playerP:hover{
   background: rgba(44, 44, 44, 0.377);
   cursor: pointer;
 }
-
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
@@ -516,7 +514,7 @@ a .uil {
     width: 470px;
     gap: 10px;
     color: white;
-    height: 350px;
+    height: 600px;
     overflow: scroll;
 }
 
@@ -525,7 +523,6 @@ a .uil {
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-
     background: #414141;
     padding: 5px;
     transition: .5s;
@@ -604,7 +601,5 @@ a .uil {
   pointer-events: auto;
   transform: translateY(0);
 }
-input[type='number']{
-  width: 50px;
-  height: 50px;
-}
+
+
