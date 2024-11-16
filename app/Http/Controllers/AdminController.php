@@ -34,6 +34,7 @@ class AdminController extends Controller
         $UserID=1;
             
             $m = Userteam::where('User',$UserID)->first();
+            if($m){
             Fantasieuserxi::create([
                 'User'=>$UserID,
                 'FixturN'=>$number,
@@ -50,6 +51,23 @@ class AdminController extends Controller
                 'Player11'=>$m->Player11,
                 'Formation'=>$m->Formation,
             ]);
+        }else{
+            Userteam::create([
+                'User'=>$UserID,
+                'FixturN'=>$number,
+                'Player1'=>null,
+                'Player2'=>null,
+                'Player3'=>null,
+                'Player4'=>null,
+                'Player5'=>null,
+                'Player6'=>null,
+                'Player7'=>null,
+                'Player8'=>null,
+                'Player9'=>null,
+                'Player10'=>null,
+                'Player11'=>null,
+            ]);
+        }
             return to_route('Fixtur.Admin');
     }
     public function AdminClubs()

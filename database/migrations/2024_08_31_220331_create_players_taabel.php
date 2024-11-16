@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->unsignedBigInteger('situation_id');
-            $table->foreign('situation_id')->references('id')->on('situations');
+            $table->integer('situation_id');
             $table->integer('Price');
             $table->string('Club')->nullable();
             $table->string('Position');
