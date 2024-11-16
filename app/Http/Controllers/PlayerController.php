@@ -11,6 +11,7 @@ use App\Models\Userhier;
 use App\Models\Playepoint;
 use App\Models\Userteam;
 use App\Models\Flight;
+use Number;
 use PhpParser\Node\Expr\Match_;
 class PlayerController extends Controller
 {
@@ -37,8 +38,7 @@ class PlayerController extends Controller
         $Games = $results = Matche::where(function ($query)use ($club) {
             $query->where('Home', $club->id)->orWhere('Home', $club->id);
         })
-        ->where('FixturN', $Fixtur)
-        ->get();
+        ->where('FixturN', $Fixtur)->get();
         return view('PlayerProfiel',['User' => $User,'Games' => $Games,'Player' => $Player,'PlayerPoints' => $PlayerPoints,'Fixtur'=>$Fixtur,'FixturPoints' => $FixturPoints]);
     }
     public function OwnedPlayerProfiel($User,$Player,$Fixtur){
@@ -160,6 +160,7 @@ class PlayerController extends Controller
             'Points'=> $Player->Points + $FixturPoints->TOTALPOINTS,
             'Gols'=> $Player->Gols + $FixturPoints->Goals,
             'assiste'=> $Player->assiste + $FixturPoints->GoalAssists,
+            'situation_id'=>(int)request()->situation,
         ]);
         $FPs = Playepoint::where('PlayerID', $Player->id)->get();
         $count=0;

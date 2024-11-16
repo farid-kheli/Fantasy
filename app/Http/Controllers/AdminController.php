@@ -254,6 +254,7 @@ class AdminController extends Controller
             'Pictur' => $path,
             'Points' => 0,
             'Avrege' => 0,
+            'situation_id' => 1,
         ]);
         return to_route('Create.Player')->with('succece', 'you have created a new club ');
     }

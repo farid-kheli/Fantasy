@@ -1,6 +1,19 @@
 @extends('playerprofiel.PlayerProfiel')
+@section('situation')
+<img src='{{$Player->getsetuation($Player->situation_id)->ImgPathe}}'
+    style="height: 30px;  width: 30px;">
+@if ($Player->situation_id==1)
+   
+<h6 class="mt-1">Avalibule</h6> 
+@elseif ($Player->situation_id==2)
+<h6 class="mt-1">Injured</h6>
+@elseif ($Player->situation_id==3)
+<h6 class="mt-1">Qhuestnable</h6>
+@endif
+
+@endsection('situation')
 @section('Action')
-<a href="{{route('User.By',[$User,$Player->id,1])}}" type="button" class="btn btn-outline-danger">Hier</a>
+<a href="{{route('User.By', [$User, $Player->id, 1])}}" type="button" class="btn btn-outline-danger">Hier</a>
 @endsection('Action')
 @section('Tabel')
 <tbody>

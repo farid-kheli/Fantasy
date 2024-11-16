@@ -18,6 +18,7 @@ class Player extends Model
         'Avrege',
         'Gols',
         'assiste',
+        'situation_id',
     ];
     
     public function getTeam($name){
@@ -25,5 +26,9 @@ class Player extends Model
     }
     public function getplayer($id){
         return Player::where('id',$id)->first();
+    }
+
+    public function getsetuation($id){
+        return Situation::where('id',$id)->first();
     }
 }
