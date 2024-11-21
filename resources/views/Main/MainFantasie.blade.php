@@ -31,9 +31,10 @@
             <a href="{{route('Match.Page')}}">
                 <li><img src="https://cdn-icons-png.flaticon.com/512/53/53254.png" alt=""></li>
             </a>
-            <li class="active"><img src="https://www.pngall.com/wp-content/uploads/5/Vector-Game-Controller.png" alt="">
-            </li>
-            <li><img src="https://static.thenounproject.com/png/716657-200.png" alt=""></li>
+            <a href="{{route('Fantasie.Club', [1, 1])}}">
+                <li class="active"><img src="https://www.pngall.com/wp-content/uploads/5/Vector-Game-Controller.png" alt=""></li>
+            </a>
+
         </ul>
 
 
@@ -104,7 +105,8 @@
                     </label>
                 </form>
                 <input onkeyup="getPlayersByMaxPrice()" class="max" type="number" placeholder="max cost" id="maxPrice">
-                <input onkeyup="getPlayersByName(this.value)" class="max" type="text" name="" placeholder="serch player" id="">
+                <input onkeyup="getPlayersByName(this.value)" class="max" type="text" name="" placeholder="serch player"
+                    id="">
             </div>
             <h2>Choose Your Players</h2>
             <div class="player-list" id="player-list">

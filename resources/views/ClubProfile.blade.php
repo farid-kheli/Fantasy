@@ -43,7 +43,7 @@
             <div class="players">
                 <div class="player-carde">
                     <div class="pctur">
-                        <a href="{{ route('Player.Profiel', 1) }}"><img class="player-img"
+                        <a href="{{ route('Player.Profiel',[ 1,1,1]) }}"><img class="player-img"
                                 src="https://img.chelseafc.com/image/upload/f_auto,w_400,q_90/editorial/people/first-team/2023-24/Romeo_Lavia_profile_23-24_avatar-removebg.png"
                                 alt=""></a>
                         <img class="club-img"

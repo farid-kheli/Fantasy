@@ -63,8 +63,8 @@ title{
     cursor: pointer;
     transition: .5s;
 }
-.ul li:hover, .active{
-    height: 80px;
+.ul li:hover, li.active{
+    height: 50px;
 }
 .ul li img{
     width: 40px;

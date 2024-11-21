@@ -72,7 +72,8 @@ class AdminController extends Controller
     }
     public function AdminClubs()
     {
-        return view('Clubs');
+        $clubs=Club::all();
+        return view('Clubs',['clubs'=>$clubs]);
     }
     public function SaveFixturInfo()
     {
