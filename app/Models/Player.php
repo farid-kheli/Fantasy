@@ -21,8 +21,8 @@ class Player extends Model
         'situation_id',
     ];
     
-    public function getTeam($name){
-        return Club::where('ClubName',$name)->first();
+    public function getTeam($id){
+        return Club::where('id',$id)->first();
     }
     public function getplayer($id){
         return Player::where('id',$id)->first();

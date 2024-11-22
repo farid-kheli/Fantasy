@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('Name');
             $table->integer('situation_id');
             $table->integer('Price');
-            $table->string('Club')->nullable();
+            $table->integer('Club')->nullable();
             $table->string('Position');
             $table->string('Pictur');
             $table->integer('Points')->default(0);

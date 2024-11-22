@@ -222,10 +222,12 @@ class AdminController extends Controller
         $PlayerList = Fixturteam::where('FixturN',$FixturN)->where('TeamID',$Team)->first();
         return view('Gameinfo',['club'=>$club,'FixturN'=>$FixturN,'Players'=>$Players,'PlayerList'=>$PlayerList]);//,['match'=>$match,'HomePlayers'=>$HomePlayers,'Info'=>$Info,'AwayPlayers'=>$AwayPlayers]);
     }
-    public function AdminClubsManage()
+    public function AdminClubsManage($club)
     {
+        $club=Club::where('id',$club)->first();
+        $plyerin=Player::where('Club',$club->id)->get();
         $Players = Player::where('Club', null)->get();
-        return view('ClubProfile', ['Players' => $Players]);
+        return view('ClubProfile', ['plyerins' => $plyerin,'Players' => $Players,'club'=>$club]);
     }
     public function AdminCreatePlayer()
     {

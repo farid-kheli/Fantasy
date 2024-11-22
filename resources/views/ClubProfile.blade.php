@@ -20,18 +20,18 @@
         <div class="rghit">
             <div class="rheade">
                 <div class="badg">
-                    <img src="https://static.wixstatic.com/media/d4cce1_e5278942475b419390a11d15cc603e12~mv2.png/v1/fill/w_264,h_259,al_c,lg_1,q_85,enc_auto/GnT.png"
-                        alt="">
+                    <img src="{{$club->FilePathe}}" alt="">
                 </div>
                 <div class="info">
-                    <h1 class="titel">Girth N Turf </h1>
+                    <h1 class="titel">{{$club->ClubName}} </h1>
                 </div>
             </div>
             <div class="rbody">
                 <div class="players-list">
                     @foreach ($Players as $player)
                         <div class="player">
-                            <h4>{{ $player->FirstName }} {{ $player->LastName }}</h4> <a style="text-decoration: none; color:white"
+                            <h4>{{ $player->FirstName }} {{ $player->LastName }}</h4> <a
+                                style="text-decoration: none; color:white"
                                 href="{{ route('Admin.add.playyer', [$player->id, 1]) }}">Add Player</a>
                         </div>
                     @endforeach
@@ -41,50 +41,79 @@
         </div>
         <div class="left">
             <div class="players">
-                <div class="player-carde">
-                    <div class="pctur">
-                        <a href="{{ route('Player.Profiel',[ 1,1,1]) }}"><img class="player-img"
-                                src="https://img.chelseafc.com/image/upload/f_auto,w_400,q_90/editorial/people/first-team/2023-24/Romeo_Lavia_profile_23-24_avatar-removebg.png"
-                                alt=""></a>
-                        <img class="club-img"
-                            src="https://static.wixstatic.com/media/d4cce1_e5278942475b419390a11d15cc603e12~mv2.png/v1/fill/w_264,h_259,al_c,lg_1,q_85,enc_auto/GnT.png"
-                            alt="">
+                @foreach ($plyerins as $plyerin)
+                        <div class="player-carde">
+                            <div class="pctur">
+                                <a href="{{ route('Player.Profiel.Admin', [$plyerin->Pictur, 1]) }}"><img class="player-img"
+                                        src="{{$plyerin->Pictur}}" alt=""></a>
+                                <img class="club-img" src="{{$plyerin->getTeam($plyerin->Club)->FilePathe}}" alt="">
+                            </div>
+                            <div class="card-body">
+                                <div class="first">
+                                    <div class="first11">
+                                        <p class="posinsion" style="background: rgb(0, 135, 139);">
+                                            @if ($Player->Position == 'GOL')
+                                                <h6 class="p-2" style="background: #b32d04;">
+                                                    GOL
+                                                </h6>
+                                            @endif
+                                        @if ($Player->Position == 'DEF')
+                                            <h6 class="p-2" style="background: #7e0073">
+                                                DEF
+                                            </h6>
+                                        @endif
+                                        @if ($Player->Position == 'MID')
+                                            <h6 class="p-2" style="background: #00a000">
+                                                MID
+                                            </h6>
+                                        @endif
+                                        @if ($Player->Position == 'STR')
+                                            <h6 class="p-2" style="background: rgb(0, 135, 139);">
+                                                STR
+                                            </h6>
+                                        @endif
+                                        </p>
+                                        <h2 class="name">{{$plyerin->Name}}</h2>
+                                    </div>
+                                    <div class="first12">
+                                        <h3 class="fsyp">FSYP</h3>
+                                        <h1 class="points">{{$plyerin->Points}}</h1>
+                                    </div>
+                                </div>
+                                <div class="secend">
+                                    <div class="situation">
+                                        <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
+                                            class="icon">
+                                        <div class="sit">
+                                            <div class="d-flex gap-4">
+                                                @if ($Player->situation_id == 1)
+                                                    Avariabel
+                                                @elseif ($Player->situation_id == 2)
+                                                    Injured
+                                                @elseif  ($Player->situation_id == 3)
+                                                    Questionable
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="average">
+                                    <h4 class="fsyp2">Avreage</h4>
+                                    <h2 class="points">{{$plyerin->Avrege}}</h2>
+                                </div>
+                            </div>
+                            <div class="third">
+                                <h1 class="price">{{$plyerin->Price}}£</h1>
+                                <div class="actin">
+                                    <button class="rlees">Release</button>
+                                    <button class="chang">Change</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div class="first">
-                            <div class="first11">
-                                <p class="posinsion" style="background: rgb(0, 135, 139);">
-                                    STR
-                                </p>
-                                <h2 class="name">Player First</h2>
-                            </div>
-                            <div class="first12">
-                                <h3 class="fsyp">FSYP</h3>
-                                <h1 class="points">133</h1>
-                            </div>
-                        </div>
-                        <div class="secend">
-                            <div class="situation">
-                                <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
-                                    class="icon">
-                                <div class="sit">Avalibule</div>
-                            </div>
-                            <div class="average">
-                                <h4 class="fsyp2">Avreage</h4>
-                                <h2 class="points">6.35</h2>
-                            </div>
-                        </div>
-                        <div class="third">
-                            <h1 class="price">12,000£</h1>
-                            <div class="actin">
-                                <button class="rlees">Release</button>
-                                <button class="chang">Change</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @endforeach
         </div>
+    </div>
     </div>
 </body>
 
