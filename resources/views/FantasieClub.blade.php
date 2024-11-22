@@ -1,6 +1,6 @@
 @extends('Main.MainFantasie')
 @section('Main')
-<form action="{{route('Fantasie.XI', [$User, $Fixur])}}" class="team-list" method="POST">
+<form action="{{route('Fantasie.XI', [$User, ])}}" class="team-list" method="POST">
             @csrf
             <div class="butns">
                     <a class="bactiv">Line-Up</a>
@@ -11,7 +11,8 @@
                 
 
                 <div class="dedline">
-                    <h3>Deadline - {{ \Carbon\Carbon::parse($Fixur->datendtime)->format('d M H:i') }}
+                    <h3>
+                        <!--Deadline -  \Carbon\Carbon::parse($Fixur->datendtime)->format('d M H:i') -->
                     </h3>
 
                     <div class="sec-center">

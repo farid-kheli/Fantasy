@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fantasieuserxi;
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\Player;
 use Carbon\Carbon;
@@ -58,9 +59,9 @@ class ViewController extends Controller
         $time= Carbon::now();
         return view('Week',['time'=>$time,'Fixtur'=>$Fixtur,'AllFixtur'=>$AllFixtur]);
     }
-    public function FantasieClub($ID,$Fixur)
+    public function FantasieClub()
     {
-
+        $ID=Auth::id();
         $Owned = Userhier::where('User', $ID)->get(); 
 
         $ownedPlayerIds = $Owned->pluck('Player');
@@ -76,10 +77,11 @@ class ViewController extends Controller
         $Global=Fantasieuserxi::where('User',$ID)->get();
         //dd($Owned,$Players);
         $Team = Userteam::where('User',$ID)->first();
-        $Fixur= Fixtur::where('id',$Fixur)->first();
+
+        //$Fixur= Fixtur::where('id',1)->first();
         $serverTime = Carbon::now();
         //dd($ID,$FixturN,$Team);
-        return view('FantasieClub', ['serverTime' => $serverTime,'Team' => $Team,'Global' => $Global,'FixturN' => $FixturN,'Owned' => $Owned,'Fixur' => $Fixur, 'User' => $ID, 'Players' => $Players]);
+        return view('FantasieClub', ['serverTime' => $serverTime,'Team' => $Team,'Global' => $Global,'FixturN' => $FixturN,'Owned' => $Owned, 'User' => $ID, 'Players' => $Players]);
     }
     public function singup()
     {

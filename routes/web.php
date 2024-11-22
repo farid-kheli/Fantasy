@@ -24,15 +24,14 @@ Route::get('/OldHome', function () {
 Route::get('/', function () {
     return view('Homme');
 })->name('home');
-Route::get('/singup',[ ViewController::class,'singup'])->name('Singup');
+Route::post('/Login',[ UserController::class,'login' ])->name('Singup');
 Route::POST('/New/User',[ UserController::class,'NewUser'])->name('new.user');
-Route::POST('/User/Login',[ UserController::class,'login'])->name('login');
+Route::get('/User/Login',[ViewController::class,'singup'])->name('login');
 Route::get('/League/Tabule',[ ViewController::class,'LeagueTabul'])->name('League.Tabul');
 Route::get('/Matchs',[ ViewController::class,'MAtchesPage'])->name('Match.Page');
 Route::get('/Matchs/Players/{by}',[ ViewController::class,'Player'])->name('Players.Page');
 Route::get('/Matchs/Plane/Week/{number}',[ ViewController::class,'PlanWeek'])->name('League.Plan');
-Route::get('/Fantasie/Team/{ID}/{Fixur}',[ ViewController::class,'FantasieClub'])->name('Fantasie.Club');
-Route::get('/Fantasie/Points/{ID}/{Fixur}',[ ViewController::class,'FantasiePoints'])->name('Fantasie.Club.Points');
+
 Route::get('/Admin/Matches',[ AdminController::class,'AdminMatches'])->name('Admin.Matches');
 Route::get('/Admin/Clubs',[ AdminController::class,'AdminClubs'])->name('Admin.Clubs');
 Route::get('/Admin/Creat/Player',[ AdminController::class,'AdminCreatePlayer'])->name('Admin.Create.Player');
@@ -45,15 +44,20 @@ Route::get('/Admin/Creat/club',[ AdminController::class,'AdminCreateClub'])->nam
 Route::get('/Admin/Game/detail/{Team}/{FixturN}',[ AdminController::class,'GameCarde'])->name('Game.Carde');
 Route::get('/Admin/Clubs/{club}',[ AdminController::class,'AdminClubsManage'])->name('Admin.Clubs.Manage');
 Route::get('/Admin/add/{player}/to/{club}',[ AdminController::class,'addplayertoclub'])->name('Admin.add.playyer');
+Route::middleware("auth")->group(function () {
+Route::get('/Fantasie/Team',[ ViewController::class,'FantasieClub'])->name('Fantasie.Club');
+Route::get('/Fantasie/Points/{ID}/{Fixur}',[ ViewController::class,'FantasiePoints'])->name('Fantasie.Club.Points');
+Route::get('/Player/Profiel/{User}/{Player}/{Fixtur}',[ PlayerController::class,'PlayerProfiel'])->name('Player.Profiel');
+Route::get('/Player/Profiel/Owned/{User}/{Player}/{Fixtur}',[ PlayerController::class,'OwnedPlayerProfiel'])->name('Player.Profiel.Owned');
+Route::get('/{User}/by/{Player}/{Fixutur}',[ PlayerController::class,'Bying'])->name('User.By');
+Route::post('/Fantasie/Team/{User}',[ PlayerController::class,'SaveFantasieXI'])->name('Fantasie.XI');
+Route::get('/{User}/sele/{Player}/{Fantasie}',[ PlayerController::class,'seling'])->name('User.sele');
+});
 Route::get('/Admin/Player/Profiel/{Player}/{Fixtur}',[ PlayerController::class,'AdminPlayerProfiel'])->name('Player.Profiel.Admin');
 Route::get('/Admin/Fixture/',[ AdminController::class,'Fixtur'])->name('Fixtur.Admin');
 Route::post('/Admin/Save/Fixture',[ AdminController::class,'SaveFixturInfo'])->name('Save.Fixtur.Info');
 Route::post('/Update/{Player}/Points/{Fixtur}',[ PlayerController::class,'UpdatePlayerPoint'])->name('Update.Player.Fixur');
-Route::get('/Player/Profiel/{User}/{Player}/{Fixtur}',[ PlayerController::class,'PlayerProfiel'])->name('Player.Profiel');
-Route::get('/Player/Profiel/Owned/{User}/{Player}/{Fixtur}',[ PlayerController::class,'OwnedPlayerProfiel'])->name('Player.Profiel.Owned');
-Route::get('/{User}/by/{Player}/{Fixutur}',[ PlayerController::class,'Bying'])->name('User.By');
-Route::post('/Fantasie/Team/{User}/{FixturN}',[ PlayerController::class,'SaveFantasieXI'])->name('Fantasie.XI');
-Route::get('/{User}/sele/{Player}/{Fantasie}',[ PlayerController::class,'seling'])->name('User.sele');
+
 Route::get('/Start/Game/{id}',[ MatchController::class,'StartGame'])->name('start.Game');
 Route::get('/Start/Fixtur/{number}',[ AdminController::class,'StartFixtur'])->name('Start.Fixtur');
 Route::get('/scoor/Game/{who}/{id}',[ MatchController::class,'ScoorGame'])->name('Scoor.Game');

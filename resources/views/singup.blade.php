@@ -31,7 +31,7 @@
 
         <!-- Sign In -->
         <div class="container__form container--signin">
-            <form action="{{route('login')}}" method="POST" class="form" id="form2">
+            <form action="{{route('Singup')}}" method="POST" class="form" id="form2">
                 @csrf
                 <h2 class="form__title">Sign In</h2>
                 @if (session('wrong'))

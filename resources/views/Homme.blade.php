@@ -11,7 +11,7 @@
 <a href="{{route('Match.Page')}}">
     <li><img src="https://cdn-icons-png.flaticon.com/512/53/53254.png" alt=""></li>
 </a>
-<a href="{{route('Fantasie.Club',[1,1])}}"><li><img src="https://www.pngall.com/wp-content/uploads/5/Vector-Game-Controller.png" alt=""></li></a>
+<a href="{{route('Fantasie.Club')}}"><li><img src="https://www.pngall.com/wp-content/uploads/5/Vector-Game-Controller.png" alt=""></li></a>
 
 @endsection('Nav')
 @section('Main')

@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use App\Models\Userteam;
 
 class UserController extends Controller
 {
@@ -17,22 +18,29 @@ class UserController extends Controller
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => 'required',
         ]);
-        User::create([
+        $user=User::create([
             'name' => request()->UserName,
             'email' => request()->email,
             'password' => hash::make(request()->password),
         ]);
-        return to_route('Singup');
+        Userteam::create([
+            'User'=>$user->id
+        ]);
+        
+        return to_route('login');
     }
     public function login()
     {
-        $user = User::where('email',request()->email)->first();
-        //dd($user,hash::check(request()->password,$user->password));
-        if ($user && hash::check(request()->password,$user->password)) {
+        $user = User::where('email', request()->email)->first();
+        //dd($user, get_class($user), $user instanceof Illuminate\Contracts\Auth\Authenticatable);
+
+        if ($user && Hash::check(request()->password, $user->password)) {
+            Auth::login($user);
             return to_route('home');
         } else {
-            return to_route('Singup')->with('wrong', 'email or password wrong');
+            return to_route('login')->with('wrong', 'email or password wrong');
         }
+
 
     }
 }
