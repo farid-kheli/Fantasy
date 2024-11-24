@@ -111,7 +111,7 @@
             <h2>Choose Your Players</h2>
             <div class="player-list" id="player-list">
                 @foreach ($Players as $Player)
-                    <a href="{{route('Player.Profiel', [$User, $Player->id, 7])}}" class="pl-bay">
+                    <a href="{{route('Player.Profiel', [$User, $Player->id])}}" class="pl-bay">
                         <div class="bay-situation">
                             <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
                                 alt="">
@@ -137,6 +137,7 @@
 <script>
 
     player = @json($Players);
+    User = @json($User);
 
     function sortPlayersBy(property) {
         player.sort((a, b) => {
@@ -149,7 +150,7 @@
         element.innerHTML = "";
         for (let index = 0; index < player.length; index++) {
 
-            element.innerHTML += `  <a href="{{route('Player.Profiel', [$User,1, 7])}}" class="pl-bay">
+            element.innerHTML += `  <a href="/Player/Profiel/${User}/${player[index].id}" class="pl-bay">
                         <div class="bay-situation">
                             <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
                                 alt="">
@@ -172,7 +173,7 @@
         element.innerHTML = "";
         for (let index = 0; index < player.length; index++) {
 
-            element.innerHTML += `  <a href="{{route('Player.Profiel', [$User, 1, 7])}}" class="pl-bay">
+            element.innerHTML += `  <a href="<a href="/Player/Profiel/${User}/${player[index].id}"" class="pl-bay">
                         <div class="bay-situation">
                             <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
                                 alt="">
@@ -194,7 +195,7 @@
         element.innerHTML = "";
         for (let index = 0; index < player.length; index++) {
 
-            element.innerHTML += `  <a href="{{route('Player.Profiel', [$User, 1, 7])}}" class="pl-bay">
+            element.innerHTML += `  <a href="/Player/Profiel/${User}/${player[index].id}"" class="pl-bay">
                         <div class="bay-situation">
                             <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
                                 alt="">
@@ -216,7 +217,7 @@
         if (by == 'ALL') {
             element.innerHTML = ` 
             @foreach ($Players as $Player)
-                <a href="{{route('Player.Profiel', [$User, 1, 7])}}" class="pl-bay">
+                <a href="/Player/Profiel/${User}/${player[index].id}/7"" class="pl-bay">
                     <div class="bay-situation">
                         <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
                             alt="">
@@ -234,7 +235,7 @@
             element.innerHTML = "";
             for (let index = 0; index < player.length; index++) {
                 if (player[index].Position == by) {
-                    element.innerHTML += `  <a href="{{route('Player.Profiel', [$User, 1, 7])}}" class="pl-bay">
+                    element.innerHTML += `  <a href="/Player/Profiel/${User}/${player[index].id}/7"" class="pl-bay">
                         <div class="bay-situation">
                             <img src="https://www.veryicon.com/download/png/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1?s=256"
                                 alt="">

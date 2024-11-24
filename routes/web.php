@@ -48,7 +48,7 @@ Route::middleware("auth")->group(function () {
 Route::get('/Fantasie/Team',[ ViewController::class,'FantasieClub'])->name('Fantasie.Club');
 Route::get('/Fantasie/Points/{ID}/{Fixur}',[ ViewController::class,'FantasiePoints'])->name('Fantasie.Club.Points');
 Route::get('/Player/Profiel/{User}/{Player}/{Fixtur}',[ PlayerController::class,'PlayerProfiel'])->name('Player.Profiel');
-Route::get('/Player/Profiel/Owned/{User}/{Player}/{Fixtur}',[ PlayerController::class,'OwnedPlayerProfiel'])->name('Player.Profiel.Owned');
+Route::get('/Player/Profiel/Owned/{User}/{Player}',[ PlayerController::class,'OwnedPlayerProfiel'])->name('Player.Profiel.Owned');
 Route::get('/{User}/by/{Player}/{Fixutur}',[ PlayerController::class,'Bying'])->name('User.By');
 Route::post('/Fantasie/Team/{User}',[ PlayerController::class,'SaveFantasieXI'])->name('Fantasie.XI');
 Route::get('/{User}/sele/{Player}/{Fantasie}',[ PlayerController::class,'seling'])->name('User.sele');

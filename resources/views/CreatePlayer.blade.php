@@ -26,7 +26,7 @@
                 <select  name="club" class="form-select form-select-lg mb-3" aria-label="Large select example">
                     <option selected>Open this select menu</option>
                     @foreach ($clubs as $club)
-                    <option>{{$club->ClubName}}</option>
+                    <option value="{{$club->id}}">{{$club->ClubName}}</option>
                     @endforeach
                 </select>
                 <h4>player Posision</h4>

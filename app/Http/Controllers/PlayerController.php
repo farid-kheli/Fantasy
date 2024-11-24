@@ -10,6 +10,7 @@ use App\Models\Club;
 use App\Models\Userhier;
 use App\Models\Playepoint;
 use App\Models\Userteam;
+use App\Models\Fixtur;
 use App\Models\Flight;
 use Number;
 use PhpParser\Node\Expr\Match_;
@@ -29,12 +30,12 @@ class PlayerController extends Controller
 
         return view('AdminPlayerProfiel',['Games' => $Games,'Player' => $Player,'PlayerPoints' => $PlayerPoints,'Fixtur'=>$Fixtur,'FixturPoints' => $FixturPoints]);
     }
-    public function PlayerProfiel($User,$Player,$Fixtur){
-
+    public function PlayerProfiel($User,$Player){
+        $Fixtur=Fixtur::latest()->first()->id;
         $Player = Player::where('id', $Player)->first();
         $PlayerPoints = Playepoint::where('PlayerID', $Player->id)->get();
         $FixturPoints = Playepoint::where('PlayerID', $Player->id)->where('FixtureN',$Fixtur)->first();
-        $club = Club::where('ClubName',$Player->Club)->first();
+        $club = Club::where('id',$Player->Club)->first();
         $Games = $results = Matche::where(function ($query)use ($club) {
             $query->where('Home', $club->id)->orWhere('Home', $club->id);
         })
